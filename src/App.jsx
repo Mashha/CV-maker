@@ -3,6 +3,7 @@ import PersonalData from "./components/PersonalData";
 import WorkData from "./components/WorkData";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Template from "./components/Template";
 import "./App.css";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
       setSelectedImage(URL.createObjectURL(e.target.files[0]));
     } else {
       const value = e.target.value;
+      console.log(e.target.value)
       setFormData({
         ...formData,
         [e.target.name]: value,
@@ -46,15 +48,19 @@ function App() {
     });
   }
 
+  let objects = {...formData, ...formDataWork}
+
   return (
     <div className="App">
       <Header />
       <main>
         <div className="form">
-          <PersonalData {...formData} onChange={() => handleChange(e)} />
-          <WorkData {...formDataWork} onChange={() => handleWorkData(e)} />
+          <PersonalData {...formData} handleChange={handleChange} />
+          <WorkData {...formDataWork} handleWorkData={handleWorkData} />
         </div>
-        <div className="letter"></div>
+        <div className="cv-letter">
+          <Template {...objects}/>
+        </div>
       </main>
       <Footer />
     </div>
