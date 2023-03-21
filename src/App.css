@@ -1,25 +1,79 @@
-*, *::before, *::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+    font-size: 13px;
 }
 
 .App {
-    width: 100%;
-    height: 100vh;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .data-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .data-input {
-    width: 80%;
-    margin: auto;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inner-cv {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  height: 100vh;
+}
+
+.inner-cv .left,
+.right {
+  border: 1px solid black;
+}
+
+.inner-cv .left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.inner-cv .left .image {
+  width: 200px;
+  height: 250px;
+}
+.inner-cv .left .image img {
+  width: 100%;
+}
+
+.inner-cv .left .contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inner-cv .right {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
     gap: 10px;
+}
+
+.inner-cv .right p {
+    text-align: center;
 }

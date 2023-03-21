@@ -1,11 +1,12 @@
-import { first } from "lodash";
 import { useState } from "react";
+import PersonalData from "./components/PersonalData";
 import "./App.css";
 
 function App() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
+    title: "",
     address: "",
     city: "",
     country: "",
@@ -16,12 +17,17 @@ function App() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   function handleChange(e) {
+    if(e.target.name === "image"){
+      setSelectedImage(URL.createObjectURL(e.target.files[0]))
+    } else {
     const value = e.target.value;
     setFormData({
       ...formData,
       [e.target.name]: value,
-    });
+    })}
   }
+
+  //console.log(formData)
 
   return (
     <div className="App">
@@ -42,12 +48,16 @@ function App() {
             onChange={handleChange}
           />
           <input
+            type="text"
+            name="title"
+            placeholder="Title"
+            onChange={handleChange}
+          />
+          <input
             type="file"
-            name=""
+            name="image"
             placeholder="Browse image"
-            onChange={(e) => {
-              console.log(e.target.files[0]);
-            }}
+            onChange={handleChange}
           />
           <input
             type="text"
@@ -88,6 +98,11 @@ function App() {
             onChange={handleChange}
           ></textarea>
         </div>
+      </div>
+
+
+      <div className="cv-container">
+        <PersonalData {...formData} selectedImage={selectedImage}/>
       </div>
     </div>
   );
