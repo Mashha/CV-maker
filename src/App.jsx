@@ -31,7 +31,11 @@ function App() {
 
   return (
     <div className="App">
+      <header>
+        <h1>Create your resume</h1>
+      </header>
       {/* header, main with two divs and footer */}
+      <main>
       <div className="data-container">
         <h1>Personal information</h1>
         <div className="data-input">
@@ -104,6 +108,11 @@ function App() {
       <div className="cv-container">
         <PersonalData {...formData} selectedImage={selectedImage}/>
       </div>
+      </main>
+
+      <footer>
+        <p>Copyright -icon </p>
+      </footer>
     </div>
   );
 }

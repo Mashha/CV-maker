@@ -35,7 +35,7 @@ const PersonalData = (props) => {
           <div className="job-title">
             <h3>{props.title}</h3>
           </div>
-          <div className="short-discription">
+          <div className="short-description">
             <p>{props.description}</p>
           </div>
         </div>
