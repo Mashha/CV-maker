@@ -1,4 +1,5 @@
 import React from "react";
+import WorkData from "./WorkData";
 
 const PersonalData = (props) => {
   return (
@@ -38,6 +39,7 @@ const PersonalData = (props) => {
           <div className="short-description">
             <p>{props.description}</p>
           </div>
+          <div className="experience">{/* add work data */}</div>
         </div>
       </div>
     </>
