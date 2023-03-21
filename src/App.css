@@ -41,52 +41,6 @@ main {
   gap: 10px;
 }
 
-.inner-cv {
-  width: 80%;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 0.7fr 1.3fr;
-  height: 100vh;
-}
-
-.inner-cv .left,
-.right {
-  border: 1px solid black;
-}
-
-.inner-cv .left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 20px;
-}
-
-.inner-cv .left .image {
-  width: 200px;
-  height: 250px;
-}
-.inner-cv .left .image img {
-  width: 100%;
-}
-
-.inner-cv .left .contact {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.inner-cv .right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 20px;
-  gap: 10px;
-}
-
-.inner-cv .right p {
-  text-align: center;
-}
-
 /* experience form */
 .data-experience {
   width: 80%;

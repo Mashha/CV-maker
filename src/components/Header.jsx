@@ -1,5 +1,9 @@
 import React from "react";
 
 export default function Header() {
-  return <h1>Create your resume</h1>;
+  return (
+    <header>
+      <h1>Create your resume</h1>
+    </header>
+  );
 }

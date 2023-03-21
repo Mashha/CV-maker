@@ -49,8 +49,13 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <PersonalData {...formData} onChange={() => handleChange(e)} />
-      <WorkData {...formDataWork} onChange={() => handleWorkData(e)} />
+      <main>
+        <div className="form">
+          <PersonalData {...formData} onChange={() => handleChange(e)} />
+          <WorkData {...formDataWork} onChange={() => handleWorkData(e)} />
+        </div>
+        <div className="letter"></div>
+      </main>
       <Footer />
     </div>
   );
