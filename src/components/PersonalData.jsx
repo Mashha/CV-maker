@@ -1,49 +1,71 @@
-import React from "react";
-import WorkData from "./WorkData";
-
-const PersonalData = (props) => {
+export default function PersonalData(props) {
   return (
-    <>
-      <div className="inner-cv">
-        <div className="left">
-          <div className="image">
-            <img src={props.selectedImage} alt="" />
-          </div>
-          <div className="contact">
-            <h3>Contact</h3>
-            <div className="address">
-              {/* icon */}
-              <p>
-                {props.address}, {props.city}, {props.country}
-              </p>
-            </div>
-            <div className="phone">
-              {/* icon */}
-              <p>{props.phone}</p>
-            </div>
-            <div className="email">
-              {/* icon */}
-              <p>{props.email}</p>
-            </div>
-          </div>
-        </div>
-        <div className="right">
-          <div className="name">
-            <h1>
-              {props.firstName} {props.lastName}
-            </h1>
-          </div>
-          <div className="job-title">
-            <h3>{props.title}</h3>
-          </div>
-          <div className="short-description">
-            <p>{props.description}</p>
-          </div>
-          <div className="experience">{/* add work data */}</div>
-        </div>
+    <div className="data-container">
+      <h1>Personal information</h1>
+      <div className="data-input">
+        <input
+          type="text"
+          name="firstName"
+          placeholder="First name"
+          onChange={props.handleChange}
+        />
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Last name"
+          onChange={props.handleChange}
+        />
+        <input
+          type="text"
+          name="title"
+          placeholder="Title"
+          onChange={props.handleChange}
+        />
+        <input
+          type="file"
+          name="image"
+          placeholder="Browse image"
+          onChange={props.handleChange}
+        />
+        <input
+          type="text"
+          name="address"
+          placeholder="Street name"
+          onChange={props.handleChange}
+        />
+        <input
+          type="text"
+          name="city"
+          placeholder="City"
+          onChange={props.handleChange}
+        />
+        <input
+          type="text"
+          name="country"
+          placeholder="Country"
+          onChange={props.handleChange}
+        />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Phone number"
+          onChange={props.handleChange}
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          onChange={props.handleChange}
+        />
+        <textarea
+          name="description"
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Description"
+          onChange={props.handleChange}
+        ></textarea>
       </div>
-    </>
+    </div>
   );
-};
-
-export default PersonalData;
+}
