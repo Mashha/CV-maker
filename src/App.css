@@ -53,6 +53,18 @@ main {
   gap: 10px;
 }
 
+/* education form */
+.data-education {
+  width: 80%;
+  margin: auto;
+}
+
+.data-education-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 footer {
   padding: 20px 0;
   background-color: bisque;

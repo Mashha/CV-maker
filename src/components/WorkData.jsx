@@ -26,13 +26,19 @@ export default function WorkData(props) {
         <input
           type="text"
           name="dateFrom"
-          placeholder="From (2015)"
+          placeholder="Start date (YYYY)"
           onChange={props.handleWorkData}
         />
         <input
           type="text"
           name="dateTo"
-          placeholder="To (2017)"
+          placeholder="End date (YYYY)"
+          onChange={props.handleWorkData}
+        />
+        <input
+          type="text"
+          name="desc"
+          placeholder="Description"
           onChange={props.handleWorkData}
         />
         <button>Add more</button>

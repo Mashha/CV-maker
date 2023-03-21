@@ -4,6 +4,7 @@ import WorkData from "./components/WorkData";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Template from "./components/Template";
+import Education from "./components/Education";
 import "./App.css";
 
 function App() {
@@ -25,6 +26,16 @@ function App() {
     cityWork: "",
     dateFrom: "",
     dateTo: "",
+    notes: "",
+  });
+
+  const [formDataEducation, setFormDataEducation] = useState({
+    universityName: "",
+    cityUni: "",
+    degree: "",
+    educationDescription: "",
+    startDate: "",
+    endDate: "",
   });
 
   function handleChange(e) {
@@ -32,7 +43,7 @@ function App() {
       setSelectedImage(URL.createObjectURL(e.target.files[0]));
     } else {
       const value = e.target.value;
-      console.log(e.target.value)
+
       setFormData({
         ...formData,
         [e.target.name]: value,
@@ -48,7 +59,16 @@ function App() {
     });
   }
 
-  let objects = {...formData, ...formDataWork}
+  function handleEducData(e) {
+    const value = e.target.value;
+    console.log(e.target.value);
+    setFormDataEducation({
+      ...formDataEducation,
+      [e.target.name]: value,
+    });
+  }
+
+  let objects = { ...formData, ...formDataWork, ...formDataEducation };
 
   return (
     <div className="App">
@@ -57,9 +77,10 @@ function App() {
         <div className="form">
           <PersonalData {...formData} handleChange={handleChange} />
           <WorkData {...formDataWork} handleWorkData={handleWorkData} />
+          <Education {...formDataEducation} handleEducData={handleEducData} />
         </div>
         <div className="cv-letter">
-          <Template {...objects}/>
+          <Template {...objects} />
         </div>
       </main>
       <Footer />
