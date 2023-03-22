@@ -20,14 +20,17 @@ function App() {
   });
 
   const [selectedImage, setSelectedImage] = useState(null);
-  const [formDataWork, setFormDataWork] = useState({
-    position: "",
-    company: "",
-    cityWork: "",
-    dateFrom: "",
-    dateTo: "",
-    notes: "",
-  });
+  const [formDataWork, setFormDataWork] = useState([
+    {
+      position: "",
+      company: "",
+      dateFrom: "",
+      dateTo: "",
+      notes: "",
+    },
+  ]);
+
+  console.log(formDataWork);
 
   const [formDataEducation, setFormDataEducation] = useState({
     universityName: "",
@@ -36,6 +39,17 @@ function App() {
     startDate: "",
     endDate: "",
   });
+
+  function newWorkData() {
+    const newWordDateObj = {
+      position: "",
+      company: "",
+      dateFrom: "",
+      dateTo: "",
+      notes: "",
+    };
+    setFormDataWork((prevData) => [...prevData, newWordDateObj]);
+  }
 
   function handleChange(e) {
     if (e.target.name === "image") {
@@ -75,7 +89,14 @@ function App() {
       <main>
         <div className="form">
           <PersonalData {...formData} handleChange={handleChange} />
-          <WorkData {...formDataWork} handleWorkData={handleWorkData} />
+          {formDataWork.map((data, id) => (
+            <WorkData
+              {...data}
+              handleWorkData={handleWorkData}
+              newWorkData={newWorkData}
+              key={id}
+            />
+          ))}
           <Education {...formDataEducation} handleEducData={handleEducData} />
         </div>
         <div className="cv-letter">

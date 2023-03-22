@@ -35,6 +35,7 @@ export default function Education(props) {
           placeholder="End date (YYYY)"
           onChange={props.handleEducData}
         />
+        <button>Remove</button>
         <button>Add more</button>
       </div>
     </div>

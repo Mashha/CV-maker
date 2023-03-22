@@ -19,12 +19,6 @@ export default function WorkData(props) {
         />
         <input
           type="text"
-          name="cityWork"
-          placeholder="City"
-          onChange={props.handleWorkData}
-        />
-        <input
-          type="text"
           name="dateFrom"
           placeholder="Start date (YYYY)"
           onChange={props.handleWorkData}
@@ -41,7 +35,8 @@ export default function WorkData(props) {
           placeholder="Description"
           onChange={props.handleWorkData}
         />
-        <button>Add more</button>
+        <button>Remove</button>
+        <button onClick={props.newWorkData}>Add more</button>
       </div>
     </div>
   );
