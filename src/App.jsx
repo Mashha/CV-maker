@@ -79,7 +79,7 @@ function App() {
           <Education {...formDataEducation} handleEducData={handleEducData} />
         </div>
         <div className="cv-letter">
-          <Template {...objects} />
+          <Template {...objects} selectedImage={selectedImage} />
         </div>
       </main>
       <Footer />
