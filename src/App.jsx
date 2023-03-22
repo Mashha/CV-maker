@@ -30,23 +30,37 @@ function App() {
     },
   ]);
 
-  const [formDataEducation, setFormDataEducation] = useState({
-    universityName: "",
-    degree: "",
-    educationDescription: "",
-    startDate: "",
-    endDate: "",
-  });
+  const [formDataEducation, setFormDataEducation] = useState([
+    {
+      universityName: "",
+      degree: "",
+      educationDescription: "",
+      startDate: "",
+      endDate: "",
+    },
+  ]);
 
   function newWorkData() {
-    const newWordDateObj = {
+    const newWordDataObj = {
       position: "",
       company: "",
       dateFrom: "",
       dateTo: "",
       notes: "",
     };
-    setFormDataWork((prevData) => [...prevData, newWordDateObj]);
+    setFormDataWork((prevData) => [...prevData, newWordDataObj]);
+  }
+
+  function newEducationData() {
+    const newEducationDataObj = {
+      universityName: "",
+      degree: "",
+      educationDescription: "",
+      startDate: "",
+      endDate: "",
+    };
+
+    setFormDataEducation((prevData) => [...prevData, newEducationDataObj]);
   }
 
   function handleChange(e) {
@@ -75,10 +89,12 @@ function App() {
   function handleEducData(e) {
     const value = e.target.value;
     console.log(e.target.value);
-    setFormDataEducation({
-      ...formDataEducation,
-      [e.target.name]: value,
-    });
+    setFormDataEducation([
+      {
+        ...formDataEducation,
+        [e.target.name]: value,
+      },
+    ]);
   }
 
   let objects = { ...formData, ...formDataWork, ...formDataEducation };
@@ -97,7 +113,14 @@ function App() {
               key={id}
             />
           ))}
-          <Education {...formDataEducation} handleEducData={handleEducData} />
+          {formDataEducation.map((data, id) => (
+            <Education
+              {...data}
+              handleEducData={handleEducData}
+              key={id}
+              newEducationData={newEducationData}
+            />
+          ))}
         </div>
         <div className="cv-letter">
           <Template {...objects} selectedImage={selectedImage} />

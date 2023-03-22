@@ -36,7 +36,7 @@ export default function Education(props) {
           onChange={props.handleEducData}
         />
         <button>Remove</button>
-        <button>Add more</button>
+        <button onClick={props.newEducationData}>Add more</button>
       </div>
     </div>
   );
