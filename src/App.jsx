@@ -31,7 +31,6 @@ function App() {
 
   const [formDataEducation, setFormDataEducation] = useState({
     universityName: "",
-    cityUni: "",
     degree: "",
     educationDescription: "",
     startDate: "",

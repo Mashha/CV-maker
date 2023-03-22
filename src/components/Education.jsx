@@ -13,12 +13,6 @@ export default function Education(props) {
         />
         <input
           type="text"
-          name="cityUni"
-          placeholder="City"
-          onChange={props.handleEducData}
-        />
-        <input
-          type="text"
           name="degree"
           placeholder="Degree"
           onChange={props.handleEducData}
