@@ -30,8 +30,6 @@ function App() {
     },
   ]);
 
-  console.log(formDataWork);
-
   const [formDataEducation, setFormDataEducation] = useState({
     universityName: "",
     degree: "",
@@ -66,10 +64,12 @@ function App() {
 
   function handleWorkData(e) {
     const value = e.target.value;
-    setFormDataWork({
-      ...formDataWork,
-      [e.target.name]: value,
-    });
+    setFormDataWork([
+      {
+        ...formDataWork,
+        [e.target.name]: value,
+      },
+    ]);
   }
 
   function handleEducData(e) {
