@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Template from "./components/Template";
 import Education from "./components/Education";
+import uniqid from "uniqid"
 import "./App.css";
 
 function App() {
@@ -79,8 +80,8 @@ function App() {
   function handleWorkData(e) {
     const value = e.target.value;
     setFormDataWork([
-      {
         ...formDataWork,
+        {
         [e.target.name]: value,
       },
     ]);
@@ -88,7 +89,6 @@ function App() {
 
   function handleEducData(e) {
     const value = e.target.value;
-    console.log(e.target.value);
     setFormDataEducation([
       {
         ...formDataEducation,
@@ -105,14 +105,15 @@ function App() {
       <main>
         <div className="form">
           <PersonalData {...formData} handleChange={handleChange} />
-          {formDataWork.map((data, id) => (
+          <WorkData handleWorkData={handleWorkData}/>
+          {/* {formDataWork.map((data, id) => (
             <WorkData
               {...data}
               handleWorkData={handleWorkData}
-              newWorkData={newWorkData}
               key={id}
             />
-          ))}
+          ))} */}
+          <button onClick={newWorkData}>Add more</button>
           {formDataEducation.map((data, id) => (
             <Education
               {...data}

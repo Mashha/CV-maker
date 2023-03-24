@@ -36,7 +36,6 @@ export default function WorkData(props) {
           onChange={props.handleWorkData}
         />
         <button>Remove</button>
-        <button onClick={props.newWorkData}>Add more</button>
       </div>
     </div>
   );
