@@ -31,18 +31,21 @@ export default function Template(props) {
       <div className="template-right">
         <div className="work-experience">
           <h1>Work experience</h1>
-          <div className="work-experience-inner">
-            <h3>{props.position}</h3>
+          {props.formDataWork.map(data => (
+             <div className="work-experience-inner">
+            <h3>{data.position}</h3>
             <div>
-              <div className="company-name">{props.company}</div>
+              <div className="company-name">{data.company}</div>
               <div className="date">
-                {props.dateFrom} {props.dateTo}
+                {data.dateFrom} {data.dateTo}
               </div>
             </div>
             <div className="notes">
-              <p>{props.notes}</p>
+              <p>{data.notes}</p>
             </div>
           </div>
+          ))
+         }
         </div>
         <div className="education-history">
           <h1>Education history</h1>

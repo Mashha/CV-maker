@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Template from "./components/Template";
 import Education from "./components/Education";
-import uniqid from "uniqid"
+import uniqid from "uniqid";
 import "./App.css";
 
 function App() {
@@ -79,12 +79,11 @@ function App() {
 
   function handleWorkData(e) {
     const value = e.target.value;
-    setFormDataWork([
-        ...formDataWork,
-        {
-        [e.target.name]: value,
-      },
-    ]);
+    const newWorkDataObj = formDataWork.map((workObj) => ({
+      ...workObj,
+      [e.target.name]: value,
+    }));
+    setFormDataWork(newWorkDataObj);
   }
 
   function handleEducData(e) {
@@ -97,7 +96,7 @@ function App() {
     ]);
   }
 
-  let objects = { ...formData, ...formDataWork, ...formDataEducation };
+  let objects = { ...formData, ...formDataEducation };
 
   return (
     <div className="App">
@@ -105,14 +104,9 @@ function App() {
       <main>
         <div className="form">
           <PersonalData {...formData} handleChange={handleChange} />
-          <WorkData handleWorkData={handleWorkData}/>
-          {/* {formDataWork.map((data, id) => (
-            <WorkData
-              {...data}
-              handleWorkData={handleWorkData}
-              key={id}
-            />
-          ))} */}
+          {formDataWork.map((data, id) => (
+            <WorkData {...data} handleWorkData={handleWorkData} key={id} />
+          ))}
           <button onClick={newWorkData}>Add more</button>
           {formDataEducation.map((data, id) => (
             <Education
@@ -124,7 +118,11 @@ function App() {
           ))}
         </div>
         <div className="cv-letter">
-          <Template {...objects} selectedImage={selectedImage} />
+          <Template
+            {...objects}
+            formDataWork={formDataWork}
+            selectedImage={selectedImage}
+          />
         </div>
       </main>
       <Footer />
