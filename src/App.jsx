@@ -23,6 +23,7 @@ function App() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [formDataWork, setFormDataWork] = useState([
     {
+      id: uniqid(),
       position: "",
       company: "",
       dateFrom: "",
@@ -43,12 +44,14 @@ function App() {
 
   function newWorkData() {
     const newWordDataObj = {
+      id: uniqid(),
       position: "",
       company: "",
       dateFrom: "",
       dateTo: "",
       notes: "",
     };
+    console.log(newWordDataObj);
     setFormDataWork((prevData) => [...prevData, newWordDataObj]);
   }
 
@@ -77,12 +80,18 @@ function App() {
     }
   }
 
-  function handleWorkData(e) {
+  function handleWorkData(e, id) {
     const value = e.target.value;
-    const newWorkDataObj = formDataWork.map((workObj) => ({
-      ...workObj,
-      [e.target.name]: value,
-    }));
+    const newWorkDataObj = formDataWork.map((workObj) => {
+      if (workObj.id === id) {
+        return {
+          ...workObj,
+          [e.target.name]: value,
+        };
+      } else {
+        return workObj;
+      }
+    });
     setFormDataWork(newWorkDataObj);
   }
 

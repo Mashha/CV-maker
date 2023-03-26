@@ -9,31 +9,31 @@ export default function WorkData(props) {
           type="text"
           name="position"
           placeholder="Position"
-          onChange={props.handleWorkData}
+          onChange={(e) => props.handleWorkData(e, props.id)}
         />
         <input
           type="text"
           name="company"
           placeholder="Company"
-          onChange={props.handleWorkData}
+          onChange={(e) => props.handleWorkData(e, props.id)}
         />
         <input
           type="text"
           name="dateFrom"
           placeholder="Start date (YYYY)"
-          onChange={props.handleWorkData}
+          onChange={(e) => props.handleWorkData(e, props.id)}
         />
         <input
           type="text"
           name="dateTo"
           placeholder="End date (YYYY)"
-          onChange={props.handleWorkData}
+          onChange={(e) => props.handleWorkData(e, props.id)}
         />
         <input
           type="text"
           name="desc"
           placeholder="Description"
-          onChange={props.handleWorkData}
+          onChange={(e) => props.handleWorkData(e, props.id)}
         />
         <button>Remove</button>
       </div>
