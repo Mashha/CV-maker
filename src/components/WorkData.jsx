@@ -3,7 +3,6 @@ import React from "react";
 export default function WorkData(props) {
   return (
     <div className="data-experience">
-      <h1>Experience</h1>
       <div className="data-experience-inner">
         <input
           type="text"
@@ -35,7 +34,7 @@ export default function WorkData(props) {
           placeholder="Description"
           onChange={(e) => props.handleWorkData(e, props.id)}
         />
-        <button>Remove</button>
+        <button onClick={() => props.deleteWorkObj(props.id)}>Remove</button>
       </div>
     </div>
   );

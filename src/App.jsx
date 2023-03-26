@@ -111,6 +111,16 @@ function App() {
     setFormDataEducation(newEducationObj);
   }
 
+  function deleteWorkObj(id) {
+    const removeObj = formDataWork.filter((obj) => obj.id !== id);
+    setFormDataWork(removeObj);
+  }
+
+  function deleteEduObj(id) {
+    const removeObj = formDataEducation.filter((obj) => obj.id !== id);
+    setFormDataEducation(removeObj);
+  }
+
   let object = { ...formData };
 
   return (
@@ -120,13 +130,26 @@ function App() {
         <div className="form">
           <div className="form-inner">
             <PersonalData {...formData} handleChange={handleChange} />
+
+            <h1>Experience</h1>
             {formDataWork.map((data, id) => (
-              <WorkData {...data} handleWorkData={handleWorkData} key={id} />
+              <WorkData
+                {...data}
+                handleWorkData={handleWorkData}
+                key={id}
+                deleteWorkObj={deleteWorkObj}
+              />
             ))}
             <button onClick={newWorkData}>Add more</button>
 
+            <h1>Education</h1>
             {formDataEducation.map((data, id) => (
-              <Education {...data} handleEducData={handleEducData} key={id} />
+              <Education
+                {...data}
+                handleEducData={handleEducData}
+                key={id}
+                deleteEduObj={deleteEduObj}
+              />
             ))}
             <button onClick={newEducationData}>Add more</button>
           </div>

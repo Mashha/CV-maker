@@ -3,7 +3,6 @@ import React from "react";
 export default function Education(props) {
   return (
     <div className="data-education">
-      <h1>Education</h1>
       <div className="data-education-inner">
         <input
           type="text"
@@ -35,7 +34,7 @@ export default function Education(props) {
           placeholder="End date (YYYY)"
           onChange={(e) => props.handleEducData(e, props.id)}
         />
-        <button>Remove</button>
+        <button onClick={() => props.deleteEduObj(props.id)}>Remove</button>
       </div>
     </div>
   );
