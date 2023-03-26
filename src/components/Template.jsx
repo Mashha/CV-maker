@@ -49,16 +49,18 @@ export default function Template(props) {
         </div>
         <div className="education-history">
           <h1>Education history</h1>
-          <div className="education-history-inner">
-            <h3>{props.degree}</h3>
-            <div>
-              <div className="uni-name">{props.universityName}</div>
-              <div className="uni-date">
-                {props.startDate} {props.endDate}
-              </div>
-            </div>
-            <div className="education-notes">{props.educationDescription}</div>
-          </div>
+          {props.formDataEducation.map(data => (
+             <div className="education-history-inner">
+             <h3>{data.degree}</h3>
+             <div>
+               <div className="uni-name">{data.universityName}</div>
+               <div className="uni-date">
+                 {data.startDate} {data.endDate}
+               </div>
+             </div>
+             <div className="education-notes">{data.educationDescription}</div>
+           </div>
+          ))}
         </div>
       </div>
     </div>

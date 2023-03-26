@@ -34,6 +34,7 @@ function App() {
 
   const [formDataEducation, setFormDataEducation] = useState([
     {
+      id: uniqid(),
       universityName: "",
       degree: "",
       educationDescription: "",
@@ -51,12 +52,12 @@ function App() {
       dateTo: "",
       notes: "",
     };
-    console.log(newWordDataObj);
     setFormDataWork((prevData) => [...prevData, newWordDataObj]);
   }
 
   function newEducationData() {
     const newEducationDataObj = {
+      id: uniqid(),
       universityName: "",
       degree: "",
       educationDescription: "",
@@ -95,17 +96,22 @@ function App() {
     setFormDataWork(newWorkDataObj);
   }
 
-  function handleEducData(e) {
+  function handleEducData(e, id) {
     const value = e.target.value;
-    setFormDataEducation([
-      {
-        ...formDataEducation,
-        [e.target.name]: value,
-      },
-    ]);
+    const newEducationObj = formDataEducation.map((eduObj) => {
+      if (eduObj.id === id) {
+        return {
+          ...eduObj,
+          [e.target.name]: value,
+        };
+      } else {
+        return eduObj;
+      }
+    });
+    setFormDataEducation(newEducationObj)
   }
 
-  let objects = { ...formData, ...formDataEducation };
+  let object = { ...formData };
 
   return (
     <div className="App">
@@ -117,19 +123,21 @@ function App() {
             <WorkData {...data} handleWorkData={handleWorkData} key={id} />
           ))}
           <button onClick={newWorkData}>Add more</button>
+
           {formDataEducation.map((data, id) => (
             <Education
               {...data}
               handleEducData={handleEducData}
               key={id}
-              newEducationData={newEducationData}
             />
           ))}
+          <button onClick={newEducationData}>Add more</button>
         </div>
         <div className="cv-letter">
           <Template
-            {...objects}
+            {...object}
             formDataWork={formDataWork}
+            formDataEducation={formDataEducation}
             selectedImage={selectedImage}
           />
         </div>

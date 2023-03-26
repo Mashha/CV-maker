@@ -9,34 +9,33 @@ export default function Education(props) {
           type="text"
           name="universityName"
           placeholder="University name"
-          onChange={props.handleEducData}
+          onChange={(e) => props.handleEducData(e, props.id)}
         />
         <input
           type="text"
           name="degree"
           placeholder="Degree"
-          onChange={props.handleEducData}
+          onChange={(e) => props.handleEducData(e, props.id)}
         />
         <input
           type="text"
           name="educationDescription"
           placeholder="Description"
-          onChange={props.handleEducData}
+          onChange={(e) => props.handleEducData(e, props.id)}
         />
         <input
           type="text"
           name="startDate"
           placeholder="Start date (YYYY)"
-          onChange={props.handleEducData}
+          onChange={(e) => props.handleEducData(e, props.id)}
         />
         <input
           type="text"
           name="endDate"
           placeholder="End date (YYYY)"
-          onChange={props.handleEducData}
+          onChange={(e) => props.handleEducData(e, props.id)}
         />
         <button>Remove</button>
-        <button onClick={props.newEducationData}>Add more</button>
       </div>
     </div>
   );
