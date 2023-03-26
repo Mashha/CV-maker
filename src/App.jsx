@@ -108,7 +108,7 @@ function App() {
         return eduObj;
       }
     });
-    setFormDataEducation(newEducationObj)
+    setFormDataEducation(newEducationObj);
   }
 
   let object = { ...formData };
@@ -118,20 +118,18 @@ function App() {
       <Header />
       <main>
         <div className="form">
-          <PersonalData {...formData} handleChange={handleChange} />
-          {formDataWork.map((data, id) => (
-            <WorkData {...data} handleWorkData={handleWorkData} key={id} />
-          ))}
-          <button onClick={newWorkData}>Add more</button>
+          <div className="form-inner">
+            <PersonalData {...formData} handleChange={handleChange} />
+            {formDataWork.map((data, id) => (
+              <WorkData {...data} handleWorkData={handleWorkData} key={id} />
+            ))}
+            <button onClick={newWorkData}>Add more</button>
 
-          {formDataEducation.map((data, id) => (
-            <Education
-              {...data}
-              handleEducData={handleEducData}
-              key={id}
-            />
-          ))}
-          <button onClick={newEducationData}>Add more</button>
+            {formDataEducation.map((data, id) => (
+              <Education {...data} handleEducData={handleEducData} key={id} />
+            ))}
+            <button onClick={newEducationData}>Add more</button>
+          </div>
         </div>
         <div className="cv-letter">
           <Template

@@ -26,27 +26,22 @@ main {
   margin: 20px 0;
 }
 
-.data-container {
+.form-inner {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  width: 80%;
+  margin: auto;
+  gap: 10px;
 }
 
 .data-input {
-  width: 80%;
-  margin: auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
 /* experience form */
-.data-experience {
-  width: 80%;
-  margin: auto;
-}
-
 .data-experience-inner {
   display: flex;
   flex-direction: column;
@@ -54,11 +49,6 @@ main {
 }
 
 /* education form */
-.data-education {
-  width: 80%;
-  margin: auto;
-}
-
 .data-education-inner {
   display: flex;
   flex-direction: column;
