@@ -6,7 +6,7 @@ export default function Template(props) {
       <div className="template-left">
         <div className="left-inner">
           <div className="image">
-            <img src={props.selectedImage} alt="" /> 
+            <img src={props.selectedImage} alt="" />
           </div>
           <div className="name-title">
             <h1>
@@ -16,10 +16,23 @@ export default function Template(props) {
           </div>
           <div className="contact">
             <div className="address">
-              {props.address} {props.city} {props.country}
+              <i class="fa-solid fa-location-dot"></i>
+              <div className="address-div">
+                {props.address}, {props.city}, {props.country}
+              </div>
             </div>
-            <div className="email">{props.email}</div>
-            <div className="phone">{props.phone}</div>
+            <div className="email">
+              <i class="fa-solid fa-envelope-open"></i>{" "}
+              <div className="email-address">{props.email}</div>
+            </div>
+            <div className="phone">
+              <i class="fa-solid fa-phone"></i>
+              <div>{props.phone}</div>
+            </div>
+            <div className="linkedin">
+              <i class="fa-brands fa-linkedin-in"></i>
+              <div>{props.linkedin}</div>
+            </div>
           </div>
           <div className="profile">
             <h3>Profile</h3>
@@ -31,35 +44,32 @@ export default function Template(props) {
       <div className="template-right">
         <div className="work-experience">
           <h1>Work experience</h1>
-          {props.formDataWork.map(data => (
-             <div className="work-experience-inner">
-            <h3>{data.position}</h3>
-            <div>
-              <div className="company-name">{data.company}</div>
-              <div className="date">
-                {data.dateFrom} {data.dateTo}
+          {props.formDataWork.map((data) => (
+            <div className="work-experience-inner">
+              <h3>{data.position}</h3>
+              <div>
+                <div className="company-name">{data.company}</div>
+                <div className="date">
+                  {data.dateFrom} - {data.dateTo}
+                </div>
               </div>
+              <div className="notes">{data.desc}</div>
             </div>
-            <div className="notes">
-              <p>{data.notes}</p>
-            </div>
-          </div>
-          ))
-         }
+          ))}
         </div>
         <div className="education-history">
           <h1>Education history</h1>
-          {props.formDataEducation.map(data => (
-             <div className="education-history-inner">
-             <h3>{data.degree}</h3>
-             <div>
-               <div className="uni-name">{data.universityName}</div>
-               <div className="uni-date">
-                 {data.startDate} {data.endDate}
-               </div>
-             </div>
-             <div className="education-notes">{data.educationDescription}</div>
-           </div>
+          {props.formDataEducation.map((data) => (
+            <div className="education-history-inner">
+              <h3>{data.degree}</h3>
+              <div>
+                <div className="uni-name">{data.universityName}</div>
+                <div className="uni-date">
+                  {data.startDate} {data.endDate}
+                </div>
+              </div>
+              <div className="education-notes">{data.educationDescription}</div>
+            </div>
           ))}
         </div>
       </div>

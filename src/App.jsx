@@ -18,6 +18,7 @@ function App() {
     country: "",
     phone: "",
     email: "",
+    linkedin: "",
   });
 
   const [selectedImage, setSelectedImage] = useState(null);

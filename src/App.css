@@ -1,3 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap");
+
 *,
 *::before,
 *::after {
@@ -74,9 +79,9 @@ main {
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  align-items: center;
+  gap: 50px;
   background-color: #e8dcd3;
+  padding: 20px 0;
 }
 
 .left-inner .image {
@@ -84,6 +89,7 @@ main {
   width: 220px;
   height: 220px;
   position: relative;
+  align-self: center;
 }
 
 .left-inner .image:after {
@@ -108,10 +114,169 @@ main {
   object-fit: cover;
 }
 
+.name-title {
+  margin-left: 20px;
+}
+
+.name-title h1 {
+  font-family: "Public sans", sans-serif;
+  font-size: 22px;
+  margin-bottom: 5px;
+  color: #2e2c2b;
+}
+
+.name-title h3 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #363d46;
+}
+
+.contact {
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.address,
+.email,
+.phone,
+.linkedin {
+  display: flex;
+  gap: 10px;
+}
+
+.address-div,
+.email-address,
+.phone div,
+.linkedin div {
+  font-family: "Nunito Sans";
+  font-size: 12px;
+  color: #2e2c2b;
+}
+
+.address-div {
+  padding-left: 3px;
+}
+
+.fa-brands,
+.fa-solid {
+  color: #444440;
+}
+
+/* capitalize */
+.name-title h1,
+.address-div {
+  text-transform: capitalize;
+}
+
+.profile {
+  margin: 0 20px;
+}
+
+.profile h3 {
+  color: #363d46;
+  font-family: "Source sans pro", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #444440;
+  padding-bottom: 8px;
+}
+
+.short-desc {
+  font-family: "Nunito sans";
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  padding-top: 22px;
+  text-align: justify;
+  color: #171616;
+}
+
 .template-right {
   margin: 40px 30px;
   display: grid;
   grid-template-rows: 1fr 1fr;
+}
+
+.work-experience h1,
+.education-history h1 {
+  font-family: "Public Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 17px;
+  letter-spacing: 1px;
+  position: relative;
+  color: #444440;
+}
+
+.work-experience h1::after,
+.education-history h1::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 1px;
+  background-color: #444440;
+  bottom: -8px;
+  left: 0;
+}
+
+.work-experience-inner,
+.education-history-inner {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.work-experience-inner div,
+.education-history-inner div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.work-experience-inner h3 {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #171616;
+}
+
+.work-experience-inner div .company-name,
+.education-history-inner div .uni-name {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  color: #737373;
+  font-size: 15px;
+}
+
+.work-experience-inner div .date,
+.education-history-inner div .uni-date {
+  font-family: "Nunito Sans";
+  font-size: 10px;
+  color: #171616;
+  font-weight: 600;
+}
+
+.work-experience-inner .notes,
+.education-history-inner .education-notes {
+  font-family: "Nunito Sans";
+  font-size: 11px;
+  color: #171616;
+  font-weight: 400;
+}
+
+.education-history-inner h3 {
+  font-family: "Raleway", sans-serif;
+  color: #171616;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
 footer {

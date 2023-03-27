@@ -57,6 +57,12 @@ export default function PersonalData(props) {
           placeholder="Email"
           onChange={props.handleChange}
         />
+        <input
+          type="text"
+          name="linkedin"
+          placeholder="LinkedIn"
+          onChange={props.handleChange}
+        />
         <textarea
           name="description"
           id=""
