@@ -23,6 +23,7 @@ body {
 header {
   background-color: bisque;
   padding: 30px 0;
+  text-align: center;
 }
 
 main {
@@ -113,12 +114,19 @@ button:hover {
 }
 
 /* cv template */
+.cv-letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .cv-template {
   width: 794px;
   height: 1123px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: grid;
   grid-template-columns: 0.7fr 1.3fr;
+  background-color: white;
 }
 
 .template-left {
@@ -331,5 +339,12 @@ button:hover {
 
 footer {
   padding: 20px 0;
-  background-color: bisque;
+  text-align: center;
+}
+
+@media (max-width: 1600px) {
+  main {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
