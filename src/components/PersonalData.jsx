@@ -21,12 +21,16 @@ export default function PersonalData(props) {
           placeholder="Title"
           onChange={props.handleChange}
         />
-        <input
-          type="file"
-          name="image"
-          placeholder="Browse image"
-          onChange={props.handleChange}
-        />
+        <label htmlFor="inputTag">
+          Photo
+          <input
+            type="file"
+            name="image"
+            placeholder="Photo"
+            id="inputTag"
+            onChange={props.handleChange}
+          />
+        </label>
         <input
           type="text"
           name="address"
