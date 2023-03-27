@@ -6,7 +6,7 @@ export default function Template(props) {
       <div className="template-left">
         <div className="left-inner">
           <div className="image">
-            <img src={props.selectedImage} alt="" />
+            <img src={props.selectedImage} alt="" /> 
           </div>
           <div className="name-title">
             <h1>
