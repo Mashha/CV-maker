@@ -141,7 +141,9 @@ function App() {
                 deleteWorkObj={deleteWorkObj}
               />
             ))}
-            <button onClick={newWorkData}>Add more</button>
+            {formDataWork.length < 5 && (
+              <button onClick={newWorkData}>Add more</button>
+            )}
 
             <h1>Education</h1>
             {formDataEducation.map((data, id) => (
@@ -152,7 +154,9 @@ function App() {
                 deleteEduObj={deleteEduObj}
               />
             ))}
-            <button onClick={newEducationData}>Add more</button>
+            {formDataEducation.length < 5 && (
+              <button onClick={newEducationData}>Add more</button>
+            )}
           </div>
         </div>
         <div className="cv-letter">
@@ -170,4 +174,3 @@ function App() {
 }
 
 export default App;
-
