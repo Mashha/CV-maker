@@ -28,12 +28,12 @@ export default function WorkData(props) {
           placeholder="End date (YYYY)"
           onChange={(e) => props.handleWorkData(e, props.id)}
         />
-        <input
+        <textarea
           type="text"
           name="desc"
           placeholder="Description"
           onChange={(e) => props.handleWorkData(e, props.id)}
-        />
+        ></textarea>
         <button onClick={() => props.deleteWorkObj(props.id)}>Remove</button>
       </div>
     </div>

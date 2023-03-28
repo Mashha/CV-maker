@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Template(props) {
+
   return (
     <div className="cv-template">
       <div className="template-left">
