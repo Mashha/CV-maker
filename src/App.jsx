@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Template from "./components/Template";
 import Education from "./components/Education";
+import Skills from "./components/Skills";
 import uniqid from "uniqid";
 import "./App.css";
 
@@ -44,6 +45,13 @@ function App() {
     },
   ]);
 
+  const [formDataSkills, setFormDataSkills] = useState([
+    {
+      id: uniqid(),
+      skill: "",
+    },
+  ]);
+
   function newWorkData() {
     const newWordDataObj = {
       id: uniqid(),
@@ -67,6 +75,15 @@ function App() {
     };
 
     setFormDataEducation((prevData) => [...prevData, newEducationDataObj]);
+  }
+
+  function newSkillsData() {
+    const newSkillsObj = {
+      id: uniqid(),
+      skill: "",
+    };
+
+    setFormDataSkills((prevData) => [...prevData, newSkillsObj]);
   }
 
   function handleChange(e) {
@@ -110,6 +127,21 @@ function App() {
       }
     });
     setFormDataEducation(newEducationObj);
+  }
+
+  function handleSkills(e, id) {
+    const value = e.target.value;
+    const newSkillsObj = formDataSkills.map((skill) => {
+      if (skill.id === id) {
+        return {
+          ...skill,
+          [e.target.name]: value,
+        };
+      } else {
+        return skill;
+      }
+    });
+    setFormDataSkills(newSkillsObj);
   }
 
   function deleteWorkObj(id) {
@@ -157,6 +189,14 @@ function App() {
             {formDataEducation.length < 5 && (
               <button onClick={newEducationData}>Add more</button>
             )}
+
+            <h1>Skills</h1>
+            {formDataSkills.map((data, id) => (
+              <Skills {...data} key={id} handleSkills={handleSkills} />
+            ))}
+            {formDataSkills.length < 8 && (
+              <button onClick={newSkillsData}>Add more</button>
+            )}
           </div>
         </div>
         <div className="cv-letter">
@@ -164,6 +204,7 @@ function App() {
             {...object}
             formDataWork={formDataWork}
             formDataEducation={formDataEducation}
+            formDataSkills={formDataSkills}
             selectedImage={selectedImage}
           />
         </div>

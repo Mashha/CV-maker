@@ -16,21 +16,21 @@ export default function Template(props) {
           </div>
           <div className="contact">
             <div className="address">
-              <i class="fa-solid fa-location-dot"></i>
+              <i className="fa-solid fa-location-dot"></i>
               <div className="address-div">
                 {props.address}, {props.city}, {props.country}
               </div>
             </div>
             <div className="email">
-              <i class="fa-solid fa-envelope-open"></i>{" "}
+              <i className="fa-solid fa-envelope-open"></i>{" "}
               <div className="email-address">{props.email}</div>
             </div>
             <div className="phone">
-              <i class="fa-solid fa-phone"></i>
+              <i className="fa-solid fa-phone"></i>
               <div>{props.phone}</div>
             </div>
             <div className="linkedin">
-              <i class="fa-brands fa-linkedin-in"></i>
+              <i className="fa-brands fa-linkedin-in"></i>
               <div>{props.linkedin}</div>
             </div>
           </div>
@@ -38,7 +38,14 @@ export default function Template(props) {
             <h3>Profile</h3>
             <p className="short-desc">{props.description}</p>
           </div>
-          <div className="skills">{/* maybe skills */}</div>
+          <div className="skills">
+            <h3>Skills</h3>
+            <ul className="skills-list">
+              {props.formDataSkills.map((data) => (
+                <li>{data.skill}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
       <div className="template-right">

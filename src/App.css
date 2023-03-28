@@ -62,14 +62,9 @@ main {
 }
 
 /* experience form */
-.data-experience-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-/* education form */
-.data-education-inner {
+.data-experience-inner,
+.data-education-inner,
+.data-skills {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -78,7 +73,8 @@ main {
 .data-input input,
 textarea,
 .data-experience-inner input,
-.data-education-inner input {
+.data-education-inner input,
+.data-skills input {
   padding: 4px;
   border-radius: 5px;
   border: 1px solid transparent;
@@ -231,11 +227,13 @@ button:hover {
   text-transform: capitalize;
 }
 
-.profile {
+.profile,
+.skills {
   margin: 0 20px;
 }
 
-.profile h3 {
+.profile h3,
+.skills h3 {
   color: #363d46;
   font-family: "Source sans pro", sans-serif;
   font-weight: 700;
@@ -253,6 +251,18 @@ button:hover {
   padding-top: 22px;
   text-align: justify;
   color: #171616;
+}
+
+.skills-list {
+  margin-left: 10px;
+  padding-top: 22px;
+}
+
+.skills-list li {
+  font-family: "Nunito sans";
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  padding-bottom: 10px;
 }
 
 .template-right {

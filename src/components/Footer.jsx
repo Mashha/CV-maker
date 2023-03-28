@@ -9,7 +9,7 @@ export default function Footer() {
         <a href="https://github.com/Mashha" target={"_blank"}>
           Pimu
         </a>{" "}
-        <i class="fa-solid fa-copyright"></i>{" "}
+        <i className="fa-solid fa-copyright"></i>{" "}
       </p>
     </footer>
   );
