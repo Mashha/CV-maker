@@ -64,7 +64,7 @@ main {
 /* experience form */
 .data-experience-inner,
 .data-education-inner,
-.data-skills {
+.data-skills div {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -107,6 +107,22 @@ button {
 button:hover {
   color: #2e2c2b;
   background-color: white;
+}
+
+.data-skills div {
+  position: relative;
+}
+
+.remove-skill {
+  position: absolute;
+  background: transparent;
+  border: none;
+  right: 0;
+  display: none;
+}
+
+.skill-input:hover > .remove-skill{
+  display: block;
 }
 
 /* cv template */

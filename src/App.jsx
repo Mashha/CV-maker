@@ -154,6 +154,11 @@ function App() {
     setFormDataEducation(removeObj);
   }
 
+  function deleteSkillObj(id) {
+    const removeObj = formDataSkills.filter((obj) => obj.id !== id);
+    setFormDataSkills(removeObj);
+  }
+
   let object = { ...formData };
 
   return (
@@ -192,7 +197,12 @@ function App() {
 
             <h1>Skills</h1>
             {formDataSkills.map((data, id) => (
-              <Skills {...data} key={id} handleSkills={handleSkills} />
+              <Skills
+                {...data}
+                key={id}
+                handleSkills={handleSkills}
+                deleteSkillObj={deleteSkillObj}
+              />
             ))}
             {formDataSkills.length < 8 && (
               <button onClick={newSkillsData}>Add more</button>
