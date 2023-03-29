@@ -11,9 +11,10 @@ import uniqid from "uniqid";
 import "./App.css";
 
 function App() {
-  const componentRef = useRef();
+  const ref = useRef();
+
   const handlePrint = useReactToPrint({
-    content: () => componentRef.current,
+    content: () => ref.current,
   });
 
   const [formData, setFormData] = useState({
@@ -214,16 +215,19 @@ function App() {
               <button onClick={newSkillsData}>Add more</button>
             )}
 
-            <button onClick={handlePrint} className="print-btn">Print CV</button>
+            <button onClick={handlePrint} className="print-btn">
+              Print CV
+            </button>
           </div>
         </div>
-        <div className="cv-letter" ref={componentRef}>
+        <div className="cv-letter">
           <Template
             {...object}
             formDataWork={formDataWork}
             formDataEducation={formDataEducation}
             formDataSkills={formDataSkills}
             selectedImage={selectedImage}
+            ref={ref}
           />
         </div>
       </main>

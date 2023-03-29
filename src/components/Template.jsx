@@ -1,8 +1,8 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
-export default function Template(props) {
+function Template(props, ref) {
   return (
-    <div className="cv-template">
+    <div className="cv-template" ref={ref}>
       <div className="template-left">
         <div className="left-inner">
           <div className="image">
@@ -76,7 +76,7 @@ export default function Template(props) {
               <div>
                 <div className="uni-name">{data.universityName}</div>
                 <div className="uni-date">
-                  {data.startDate} {data.endDate}
+                  {data.startDate} - {data.endDate}
                 </div>
               </div>
               <ul className="education-notes">
@@ -91,3 +91,5 @@ export default function Template(props) {
     </div>
   );
 }
+
+export default forwardRef(Template);

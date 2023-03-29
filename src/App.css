@@ -35,14 +35,14 @@ header h1 {
 main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 20px 0;
+  margin: 20px 10px;
 }
 
 .form-inner {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 70%;
+  width: 80%;
   margin: auto;
   gap: 10px;
   background-color: #e8dcd3;
@@ -293,7 +293,7 @@ button:hover {
 .template-right {
   margin: 50px 30px;
   display: grid;
-  grid-template-rows: 1.3fr 0.7fr;
+  grid-template-rows: 1.2fr 0.8fr;
 }
 
 .work-experience h1,
@@ -388,7 +388,7 @@ footer p a {
   font-weight: bold;
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1450px) {
   main {
     grid-template-columns: 1fr;
     gap: 20px;
