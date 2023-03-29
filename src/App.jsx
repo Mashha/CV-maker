@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 import PersonalData from "./components/PersonalData";
 import WorkData from "./components/WorkData";
 import Header from "./components/Header";
@@ -10,6 +11,11 @@ import uniqid from "uniqid";
 import "./App.css";
 
 function App() {
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -207,9 +213,11 @@ function App() {
             {formDataSkills.length < 8 && (
               <button onClick={newSkillsData}>Add more</button>
             )}
+
+            <button onClick={handlePrint}>Print CV</button>
           </div>
         </div>
-        <div className="cv-letter">
+        <div className="cv-letter" ref={componentRef}>
           <Template
             {...object}
             formDataWork={formDataWork}
