@@ -30,8 +30,8 @@ export default function WorkData(props) {
         />
         <textarea
           type="text"
-          name="desc"
-          placeholder="Description"
+          name="notes"
+          placeholder="Description - type each sentence on a separate line"
           onChange={(e) => props.handleWorkData(e, props.id)}
         ></textarea>
         <button onClick={() => props.deleteWorkObj(props.id)}>Remove</button>

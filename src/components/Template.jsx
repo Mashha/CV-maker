@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Template(props) {
-
   return (
     <div className="cv-template">
       <div className="template-left">
@@ -61,7 +60,11 @@ export default function Template(props) {
                   {data.dateFrom} - {data.dateTo}
                 </div>
               </div>
-              <div className="notes">{data.desc}</div>
+              <ul className="notes">
+                {data.notes.split(/\n/).map((sentence) => (
+                  <li>{sentence}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
@@ -76,7 +79,11 @@ export default function Template(props) {
                   {data.startDate} {data.endDate}
                 </div>
               </div>
-              <div className="education-notes">{data.educationDescription}</div>
+              <ul className="education-notes">
+                {data.educationDescription.split(/\n/).map((sentence) => (
+                  <li>{sentence}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

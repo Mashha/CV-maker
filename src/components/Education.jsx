@@ -18,12 +18,6 @@ export default function Education(props) {
         />
         <input
           type="text"
-          name="educationDescription"
-          placeholder="Description"
-          onChange={(e) => props.handleEducData(e, props.id)}
-        />
-        <input
-          type="text"
           name="startDate"
           placeholder="Start date (YYYY)"
           onChange={(e) => props.handleEducData(e, props.id)}
@@ -34,6 +28,12 @@ export default function Education(props) {
           placeholder="End date (YYYY)"
           onChange={(e) => props.handleEducData(e, props.id)}
         />
+        <textarea
+          type="text"
+          name="educationDescription"
+          placeholder="Description - type each sentence on a separate line"
+          onChange={(e) => props.handleEducData(e, props.id)}
+        ></textarea>
         <button onClick={() => props.deleteEduObj(props.id)}>Remove</button>
       </div>
     </div>

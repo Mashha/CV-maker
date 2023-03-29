@@ -287,9 +287,9 @@ button:hover {
 }
 
 .template-right {
-  margin: 40px 30px;
+  margin: 50px 30px;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1.3fr 0.7fr;
 }
 
 .work-experience h1,
@@ -356,9 +356,13 @@ button:hover {
 .work-experience-inner .notes,
 .education-history-inner .education-notes {
   font-family: "Nunito Sans";
-  font-size: 11px;
+  font-size: 10px;
   color: #171616;
   font-weight: 400;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
 .education-history-inner h3 {
