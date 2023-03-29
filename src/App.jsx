@@ -214,7 +214,7 @@ function App() {
               <button onClick={newSkillsData}>Add more</button>
             )}
 
-            <button onClick={handlePrint}>Print CV</button>
+            <button onClick={handlePrint} className="print-btn">Print CV</button>
           </div>
         </div>
         <div className="cv-letter" ref={componentRef}>

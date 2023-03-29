@@ -131,6 +131,10 @@ button:hover {
   display: block;
 }
 
+.print-btn {
+  background-color: #ff8886;
+}
+
 /* cv template */
 .cv-letter {
   display: flex;
@@ -388,5 +392,9 @@ footer p a {
   main {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .form-inner {
+    width: 794px;
   }
 }
