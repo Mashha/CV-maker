@@ -18,3 +18,5 @@ Skills I used:
 
 This project was part of The Odin Project course https://www.theodinproject.com/lessons/node-path-javascript-cv-application
 The implementation logic and the design is mine.
+
+Live version: https://mashha.github.io/CV-maker/
